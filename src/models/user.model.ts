@@ -1,6 +1,5 @@
 // isi dari tabel user yang akan digunakan di mongodb
 import mongoose, {Schema, Document} from "mongoose";
-import { timeStamp } from "node:console";
 
 export interface IUser extends Document {
   email: string;
