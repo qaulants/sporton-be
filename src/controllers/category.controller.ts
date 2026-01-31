@@ -6,7 +6,7 @@ export const createCategory = async (req: Request, res: Response):Promise<void> 
     const categoryData = req.body;
   
     if (req.file) {
-      categoryData.imageUrl = req.file.path;
+      categoryData.imageUrl = req.file.path.replace(/\\/g, "/");
     }
 
     const category = new Category(categoryData);

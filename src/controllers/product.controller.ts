@@ -6,7 +6,7 @@ export const createProduct = async (req: Request, res: Response): Promise<void> 
     const productData = req.body;
 
     if(req.file){
-      productData.imageUrl = req.file.path;
+      productData.imageUrl = req.file.path.replace(/\\/g, "/");
     }
 
     const product = new Product(productData);
